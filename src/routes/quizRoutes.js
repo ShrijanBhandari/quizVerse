@@ -76,6 +76,20 @@ router.get("/dashboard/score", authMiddleware, async (req, res) => {
     res.render("dashboard");
   } catch (error) {}
 });
+router.post("/quiz/evaluate", (req, res) => {
+  const { answers } = req.body;
+
+  let score = 0;
+  const total = questions.length;
+
+  questions.forEach((question) => {
+    if (answers[question._id] === question.correctAnswer) {
+      score++;
+    }
+  });
+
+  res.json({ score, total });
+});
 router.post("/start", authMiddleware, startQuiz);
 router.post("/submit", authMiddleware, submitQuiz);
 module.exports = router;
