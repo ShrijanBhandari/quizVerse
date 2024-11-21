@@ -11,4 +11,4 @@ const questionSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("mathematics", questionSchema);
+module.exports = mongoose.model("questions", questionSchema);

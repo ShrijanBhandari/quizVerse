@@ -1,5 +1,5 @@
 const User = require("../models/User");
-// const { urlencoded } = require('body-parser');
+
 const jwt = require("jsonwebtoken");
 // User Registration
 exports.registerUser = async (req, res) => {

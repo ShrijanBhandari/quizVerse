@@ -119,8 +119,9 @@
       <h1>{{subject}} Quiz</h1>
     </header>
 
-    <form action="/quiz/dashboard/score" method="GET">
+    <form action="/quiz/dashboard/score" method="POST">
       <div class="question-list">
+        <input type="hidden" name="subject" value="{{subject}}">
         {{#each questions}}
           <div class="question-card">
             <p class="question-text">{{this.question}}</p>
@@ -144,3 +145,4 @@
   </div>
 </body>
 </html>
+
